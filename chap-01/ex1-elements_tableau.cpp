@@ -1,5 +1,6 @@
-#include <iostream>
-
+#include <iostream>     // pour cin / cout
+#include <cstdlib>      // pour rand() et srand()
+#include <ctime>        // pour time()
 
 /* 
  *  @brief : affiche si les elememts d'un tableau sont pairs ou impairs
@@ -9,9 +10,12 @@ int main() {
     const int taille = 10;      // definition de la taille du tableau
     int tableau[taille];        // declaration du tableau
 
-    // initialisation du tableau
+    // initialisation du generateur de nombres aleatoires avec le temps reel
+    srand(static_cast<unsigned int>(time(nullptr)));
+
+    // initialisation du tableau avec des valeurs aleatoires entre 0 et 99
     for (int i = 0; i < taille; i++) {
-        tableau[i] = i;
+        tableau[i] = rand() % 100;
     }
 
     // traitement et affichage
