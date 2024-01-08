@@ -27,5 +27,16 @@ int main() {
         }
     }
 
+    std::cout << std::endl;
+
+    // autre boucle for
+    for (int elt : tableau) {
+        if (elt % 2 == 0) {
+            std::cout << "Number #" << elt << " is even (pair)" << std::endl;
+        } else {
+            std::cout << "Number #" << elt << " is odd (impair)" << std::endl;
+        }
+    }
+
     return 0;
 }
