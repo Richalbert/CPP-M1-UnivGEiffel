@@ -6,7 +6,7 @@
 */
 int main() {
 
-    auto exit = false;
+    bool exit = false;
     while (!exit) {
         auto c = std::cin.get();    // lit un caractere
         std::cin.ignore();          // ignore les carateres suivants
@@ -28,4 +28,6 @@ int main() {
             break;
         }
     }
+
+    return 0;
 }
