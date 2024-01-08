@@ -2,7 +2,9 @@
 
 /** fonctions libres rattachees a aucune classe **/
 
-// @brief :    Retourne la somme de 2 entiers 
+/*
+*   @brief :    Retourne la somme de 2 entiers 
+*/
 int sum(int  a, int b) { 
     return a + b;
 }
@@ -16,6 +18,15 @@ bool is_full_sum_even(int a, int b, int c) {
 }
 
 
+/*
+    @brief :    retourne un nombre lu au clavier
+*/
+int litNombre() {
+    int n = std::cin.get();
+    std::cin.ignore();
+    return n;    
+}
+
 int main() {
 
     int a = 2, b = 3;
@@ -25,6 +36,15 @@ int main() {
     std::cout << " 2 + 3 + 4 est ";
     if ( is_full_sum_even(a,b,c) == 0) {
         std::cout << "paire" << std::endl;
+    } else {
+        std::cout << "impaire" << std::endl;
+    }
+
+    std::cout << "saisir 3 nombres " << std::endl;
+
+    // autre lecture
+    if (is_full_sum_even(litNombre(), litNombre(), litNombre()) == 0) {
+         std::cout << "paire" << std::endl;
     } else {
         std::cout << "impaire" << std::endl;
     }
