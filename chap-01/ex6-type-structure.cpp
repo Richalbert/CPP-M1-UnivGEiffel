@@ -1,7 +1,8 @@
 #include <iostream>
 
 
-struct Fraction {
+//struct Fraction {
+class Fraction {
     public:
         void setNum(int num) {
             _num = num;
