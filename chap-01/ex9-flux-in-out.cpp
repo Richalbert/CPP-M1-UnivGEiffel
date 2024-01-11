@@ -78,6 +78,16 @@ int main() {
     }
 
     fichier2.close();
+
+
+    auto report = std::fstream { "report.txt", std::fstream::out };
+    report << "Operation d'ecriture ok" << std::endl;
+    report.close();
+
+    std::fstream report2 { "report2.txt", std::fstream::out };
+    report2 << "Operation d'ecriture ok" << std::endl;
+    report2.close();
+
     return 0;
 }
 
