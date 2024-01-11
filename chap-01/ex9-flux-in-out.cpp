@@ -15,7 +15,7 @@
 int main() {
 
     auto file = std::fstream {"text.txt"};
-
+/*
     const std::type_info& type = typeid(decltype(file));
     std::cout << "Le type de file (auto) est : " << type.name() 
               << std::endl;
@@ -23,6 +23,19 @@ int main() {
     const std::type_index typeIndex = typeid(decltype(file));
     std::cout << "Le type de file (auto) avec type_index est : " 
               << typeIndex.name() << std::endl;
+*/
+
+    // on verifie que le fichier existe et a pu etre ouvert
+    if (file) {     // evalue a true si le fichier est ouvert
+                    // rendu possible par surcharge de l'operateur bool()
+        std::cout << "Le fichier est ouvert" << std::endl;
+    } else {
+        std::cerr << "Impossible d'ouvrir le fichier" << std::endl;
+    }
+
+    file.close();
+
+
 
     return 0;
 }
