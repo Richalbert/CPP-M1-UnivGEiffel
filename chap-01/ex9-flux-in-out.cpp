@@ -14,7 +14,7 @@
 
 int main() {
 
-    auto file = std::fstream {"text.txt"};
+    auto file = std::fstream {"text1.txt"};
 /*
     const std::type_info& type = typeid(decltype(file));
     std::cout << "Le type de file (auto) est : " << type.name() 
@@ -35,7 +35,16 @@ int main() {
 
     file.close();
 
+    // autre facon pour ouvrir un fichier
+    std::fstream fichier("text1.txt", std::ios::in | std::ios::out);
 
+    if (fichier.is_open()) {
+        std::cout << "Le fichier est ouvert" << std::endl;
+    } else {
+        std::cerr << "Impossible d'ouvrir le fichier." << std::endl;
+    }
+
+    file.close();
 
     return 0;
 }
