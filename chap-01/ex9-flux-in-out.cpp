@@ -46,6 +46,38 @@ int main() {
 
     file.close();
 
+
+    // ouverture et lecture
+    auto file2 = std::fstream("text1.txt");
+
+    if (file2) {
+        std::string text;
+        while (!file2.eof()) {    // eof() retourne true a la fin de fichier
+            file2 >> text;        // on lit un mot depuis le fichier
+            std::cout << text << std::endl;
+        }
+    } else {
+        std::cerr << "impossible d'ouvrir le fichier" << std::endl;
+    }
+
+    file2.close();
+
+
+    // ouverture et lecture autre facon
+    std::fstream fichier2("text.txt", std::ios::in | std::ios::out);
+
+    if (fichier2.is_open()) {
+        std::cout << "Le fichier est ouvert" << std::endl;
+        std::string mot;
+        while (fichier2 >> mot) {
+            std::cout << mot << std::endl;
+        }
+
+    } else {
+        std::cout << "Impossible d'ouvrir le fichier" << std::endl;
+    }
+
+    fichier2.close();
     return 0;
 }
 
