@@ -33,6 +33,16 @@ int main() {
     for ( int c : sont_pairs) {
         std::cout << c << std::endl;
     }
+
+    // affichage
+    for (int i = 0; i < numbers.size(); i++) {
+        std::cout << "Number " << numbers[i]
+                  << " is " << (are_evens[i] ? "even (pair)" : "odd (impair)")
+                  << std::endl;
+
+    }
+
+    return 0;
 }
 
 /*
@@ -46,4 +56,8 @@ chap-01$ g++ -std=c++17 ex8-tableau-dynamique.cpp -o ex8 && ./ex8
 0
 1
 1
+Number 1 is odd (impair)
+Number 23 is odd (impair)
+Number 38 is even (pair)
+Number -54 is even (pair)
 */
