@@ -2,6 +2,7 @@
 #include <fstream>
 #include <string>
 #include <vector>
+#include <sstream>
 
 
 int main()
@@ -18,6 +19,9 @@ int main()
         // creation d'un tableau dynamique pour y stocker les phrases
         std::vector<std::string> tableau {};
 
+        // creation d'un flux 
+        std::stringstream flux {};
+
         // lecture au clavier, enregistrement dans un fichier et dans un tableau
         std::string line;
         while (true) {
@@ -28,6 +32,7 @@ int main()
             //std::cout << "[Croaw] " << line << std::endl;
             file << line << std::endl;
             tableau.push_back(line);        
+            flux << "Croaw - " << line << std::endl;
         }
 
         // lecture du tableau
@@ -35,6 +40,8 @@ int main()
             std::cout << "Croaw : " << phrase << std::endl;
         }
 
+        // affichage du flux
+        std::cout << flux.str() << std::endl;
 
 
     } else {
@@ -62,3 +69,21 @@ int main()
 
     return 0;
 }
+/*
+Ouverture du fichier en ecriture
+hello
+mister le perroquet
+as tu des choses a dire
+
+Croaw : hello
+Croaw : mister le perroquet
+Croaw : as tu des choses a dire
+Croaw - hello
+Croaw - mister le perroquet
+Croaw - as tu des choses a dire
+
+ouverture du fichier en lecture
+Craow hello
+Craow mister le perroquet
+Craow as tu des choses a dire
+*/
