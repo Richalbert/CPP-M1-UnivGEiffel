@@ -1,6 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <vector>
 
 
 int main()
@@ -14,16 +15,28 @@ int main()
     if (file) {
         std::cout << "Ouverture du fichier en ecriture" << std::endl;
 
-        // lecture au clavier, affichage et enregistrement dans un fichier
+        // creation d'un tableau dynamique pour y stocker les phrases
+        std::vector<std::string> tableau {};
+
+        // lecture au clavier, enregistrement dans un fichier et dans un tableau
         std::string line;
         while (true) {
             std::getline(std::cin, line);
             if (line.empty()) {
                 break;          // si chaine vide on sort du while
             }
-            std::cout << "[Croaw] " << line << std::endl;
+            //std::cout << "[Croaw] " << line << std::endl;
             file << line << std::endl;
+            tableau.push_back(line);        
         }
+
+        // lecture du tableau
+        for (const std::string& phrase : tableau) {
+            std::cout << "Croaw : " << phrase << std::endl;
+        }
+
+
+
     } else {
         std::cerr << "Impossible d'ouvrir le fichier em ecriture" << std::endl;
     }
@@ -49,20 +62,3 @@ int main()
 
     return 0;
 }
-
-
-/*
-    TODO : Dialogue entre l'user et le perroquet
-Ouverture du fichier en ecriture
-hello
-[Croaw] hello
-comment vas tu 
-[Croaw] comment vas tu 
-cool
-[Croaw] cool
-
-ouverture du fichier en lecture
-Craow hello
-Craow comment vas tu 
-Craow cool
-*/
