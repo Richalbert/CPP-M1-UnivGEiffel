@@ -13,10 +13,17 @@ int main()
 
     if (file) {
         std::cout << "Ouverture du fichier en ecriture" << std::endl;
-        
-        file << "Coucou" << std::endl;
-        file << "Ca va ?" << std::endl;
 
+        // lecture au clavier, affichage et enregistrement dans un fichier
+        std::string line;
+        while (true) {
+            std::getline(std::cin, line);
+            if (line.empty()) {
+                break;          // si chaine vide on sort du while
+            }
+            std::cout << "[Croaw] " << line << std::endl;
+            file << line << std::endl;
+        }
     } else {
         std::cerr << "Impossible d'ouvrir le fichier em ecriture" << std::endl;
     }
@@ -46,15 +53,16 @@ int main()
 
 /*
     TODO : Dialogue entre l'user et le perroquet
-
-    [user]          Coucou
-                    Ca va ?
-    [perroquet]     Croaw Coucou
-                    Croaw Ca va ?
-
-
 Ouverture du fichier en ecriture
+hello
+[Croaw] hello
+comment vas tu 
+[Croaw] comment vas tu 
+cool
+[Croaw] cool
+
 ouverture du fichier en lecture
-Craow Coucou
-Craow Ca va ?
+Craow hello
+Craow comment vas tu 
+Craow cool
 */
