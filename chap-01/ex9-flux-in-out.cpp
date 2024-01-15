@@ -6,7 +6,7 @@
 
     std::fstream            pour lire dans, ecrire depuis des fichiers
 */
-
+#include <sstream>          //Pour les flux de caracteres
 #include <iostream>
 #include <fstream>
 #include <typeinfo>         // pour connaitre le type des variables
@@ -46,7 +46,6 @@ int main() {
 
     file.close();
 
-
     // ouverture et lecture
     auto file2 = std::fstream("text1.txt");
 
@@ -61,7 +60,6 @@ int main() {
     }
 
     file2.close();
-
 
     // ouverture et lecture autre facon
     std::fstream fichier2("text.txt", std::ios::in | std::ios::out);
@@ -79,7 +77,6 @@ int main() {
 
     fichier2.close();
 
-
     auto report = std::fstream { "report.txt", std::fstream::out };
     report << "Operation d'ecriture ok" << std::endl;
     report.close();
@@ -87,6 +84,14 @@ int main() {
     std::fstream report2 { "report2.txt", std::fstream::out };
     report2 << "Operation d'ecriture ok" << std::endl;
     report2.close();
+
+    // pour constuire une chaine de caractere ou un flux de caracteres
+    // et concatener des std::string entre elles, on fait ainsi
+
+    std::stringstream flux;
+    flux << "un int " << 12 << " et un bool " << true << " et un char " 
+         << 'x' << " et un chaine " << "coucou" << std::endl;
+    std::cout << flux.str() << std::endl;
 
     return 0;
 }
