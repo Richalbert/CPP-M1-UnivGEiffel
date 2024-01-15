@@ -2,7 +2,17 @@
 Compilation
 -----------
 
-`g++ -std=c++17 -o hello-world 1-hello_world.cpp`
+`g++ -std=c++17 -o hello hello.cpp`
+
+ou bien 
+
+  compilation seule : `g++ -c a.cpp b.cpp c.cpp`
+
+  editiion de lien : `g++ -o exe.out a.o b.o c.o`
+
+option de compilation
+
+  `-Wfatal-errors` : pour arreter la compilation a la 1ere erreur
 
 Execution
 ---------
