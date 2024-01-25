@@ -22,7 +22,7 @@ int main()
     p.set_name("Batman");
     p.set_age(23);
 
-    // std::cout << "Person named '" << p.get_name() << "' is " << p.get_age() << " years old." << std::endl;
+    std::cout << "Person named '" << p.get_name() << "' is " << p.get_age() << " years old." << std::endl;
 
     return 0;
 }
@@ -51,10 +51,25 @@ void Person::set_name(std::string name) {
     Compilation seule
         g++ -std=c++17 -Wfatal-errors -c 1-first_class.cpp
 
+    Compilation et edition de liens
+        g++ -std=c++17 -Wfatal-errors -o program 1-first_class.cpp
+
+    Execution
+        ./program
+
+    Sortie
+        Person named 'Batman' is 23 years old.
+
     Git
         git checkout test-ch2
         git add 1-first_class.cpp
         git commit -m "TDD - ca compile"
         git push origin test-ch2
+
+        git checkout master
+        git merge test-ch2
+        git commit -m "merge de la branche de test-ch2"
+        git push origin master
+
 
 */
