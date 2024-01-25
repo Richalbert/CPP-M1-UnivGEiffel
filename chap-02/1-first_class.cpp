@@ -71,5 +71,6 @@ void Person::set_name(std::string name) {
         git commit -m "merge de la branche de test-ch2"
         git push origin master
 
-        git branch -d test.ch2 
+        git branch -d test-ch2          // suppression de la branche en local
+        git push origin -d test-ch2     // suppression de la branche sur le depot distant
 */
