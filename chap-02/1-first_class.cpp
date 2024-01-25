@@ -18,10 +18,15 @@ int main()
 }
 
 /*
-    Methofologiere Test Driven Development - TDD
+    Methodologie Test Driven Development - TDD
     - on part du main, et
     - on modifie le code pour que ca compile
 
     Compilation seule
         g++ -std=c++17 -Wfatal-errors -c 1-first_class.cpp
+
+    Git
+        git checkout test-ch2
+        git add 1-first_class.cpp
+        git commit -m "TDD - ca compile"
 */
