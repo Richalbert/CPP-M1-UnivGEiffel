@@ -10,6 +10,9 @@ public:
     void set_name(std::string name);
     void set_age(int age);
 
+    std::string get_name() const;
+    int get_age() const;
+
 };
 
 int main()
@@ -22,6 +25,14 @@ int main()
     // std::cout << "Person named '" << p.get_name() << "' is " << p.get_age() << " years old." << std::endl;
 
     return 0;
+}
+
+int Person::get_age() const {
+    return this->age;
+}
+
+std::string Person::get_name() const {
+    return this->name;
 }
 
 void Person::set_age(int age) {
