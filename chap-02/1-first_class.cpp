@@ -4,8 +4,11 @@
 class Person {
 private:
     std::string name;
+    int age;
+
 public:
     void set_name(std::string name);
+    void set_age(int age);
 
 };
 
@@ -14,11 +17,15 @@ int main()
     Person p;
 
     p.set_name("Batman");
-    // p.set_age(23);
+    p.set_age(23);
 
     // std::cout << "Person named '" << p.get_name() << "' is " << p.get_age() << " years old." << std::endl;
 
     return 0;
+}
+
+void Person::set_age(int age) {
+    this->age = age;
 }
 
 void Person::set_name(std::string name) {
