@@ -51,6 +51,14 @@ void Person::set_name(std::string name) {
     Compilation seule
         g++ -std=c++17 -Wfatal-errors -c 1-first_class.cpp
 
+    Compilation avec les symboles de debug
+        g++ -g -std=c++17 -o 1-first_class 1-first_class.cpp
+
+        puis configurer le fichier.vscode/launch.json
+        ...
+        "program": "${workspaceFolder}/chap-02/1-first_class",
+        ...
+
     Compilation et edition de liens
         g++ -std=c++17 -Wfatal-errors -o program 1-first_class.cpp
 
