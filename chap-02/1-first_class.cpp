@@ -71,5 +71,5 @@ void Person::set_name(std::string name) {
         git commit -m "merge de la branche de test-ch2"
         git push origin master
 
-
+        git branch -d test.ch2 
 */
