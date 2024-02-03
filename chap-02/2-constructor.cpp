@@ -72,7 +72,7 @@ int main()
         ./program
 
     Sortie
-        Person named 'Wayne' is 23 years old.
+        Person named 'Bruce Wayne Batman' is 23 years old.
 
     Git
         git branch -D test              // delete de la branche test en local
