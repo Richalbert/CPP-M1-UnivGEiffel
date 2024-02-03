@@ -5,23 +5,27 @@ class Person
 {
 public:
     const std::string& get_name() const { return _name; }
-    unsigned int       get_age() const { return _age; }
+    unsigned int       get_age()  const { return _age; }
 
     //void set_name(const std::string& name) { _name = name; }
     void set_age(unsigned int age) { _age = age; }
 
     /* ctor */
-    Person(const std::string& name) : _name { name } {}
+    Person(const std::string& name, const std::string& surname) 
+    : _name { name }
+    , _surname { surname }
+    {}
    
 
 private:
     std::string  _name;
+    std::string  _surname;
     unsigned int _age = 0u;
 };
 
 int main()
 {
-    Person p {"Batman"};
+    Person p {"Wayne", "Batman"};
 
     //p.set_name("Batman");
     p.set_age(23);
@@ -54,16 +58,18 @@ int main()
         ./program
 
     Sortie
-        Person named 'Batman' is 23 years old.
+        Person named 'Wayne' is 23 years old.
 
     Git
         git branch -D test              // delete de la branche test en local
+        git push origin -d test         // delete de la branche sur le depot distant si besoin
+
         git branch test                 // creation de la branche en local
         git checkout test               // changement de branche
         git status                      // pour voir
         git add 2-constructor.cpp       
-        git commit -m "TDD - ca compile"
-        git push origin test-ch2
+        git commit -m "ctor Person a la place du setter name"
+        git push origin test
 
         git checkout master
         git merge test-ch2
