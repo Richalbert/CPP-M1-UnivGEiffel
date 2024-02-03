@@ -11,13 +11,15 @@ public:
     void set_age(unsigned int age) { _age = age; }
 
     /* ctor */
-    Person(const std::string& name, const std::string& surname) 
-    : _name { name }
+    Person(const std::string& firstname, const std::string& name, const std::string& surname) 
+    : _firstname { firstname }
+    , _name { name }
     , _surname { surname }
     {}
    
 
 private:
+    std::string  _firstname;
     std::string  _name;
     std::string  _surname;
     unsigned int _age = 0u;
@@ -25,7 +27,7 @@ private:
 
 int main()
 {
-    Person p {"Wayne", "Batman"};
+    Person p {"Bruce", "Wayne", "Batman"};
 
     //p.set_name("Batman");
     p.set_age(23);
