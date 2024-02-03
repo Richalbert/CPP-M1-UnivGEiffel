@@ -1,11 +1,22 @@
 #include <iostream>
 #include <string>
+#include <sstream>
 
 class Person
 {
 public:
-    const std::string& get_name() const { return _name; }
+    const std::string& get_name()     const { return _name; }
+    const std::string& get_firstname() const { return _firstname; }
+    const std::string& get_surname()  const { return _surname; }
     unsigned int       get_age()  const { return _age; }
+
+    const std::string get_full_name() const {
+        std::ostringstream flux;
+        flux << get_firstname() << " "
+             << get_name() << " "
+             << get_surname();
+        return flux.str();
+    }
 
     //void set_name(const std::string& name) { _name = name; }
     void set_age(unsigned int age) { _age = age; }
@@ -32,8 +43,9 @@ int main()
     //p.set_name("Batman");
     p.set_age(23);
 
-    std::cout << "Person named '" << p.get_name() << "' is " << p.get_age() << " years old." << std::endl;
-
+    //std::cout << "Person named '" << p.get_name() << "' is " << p.get_age() << " years old." << std::endl;
+    std::cout << "Person named '" << p.get_full_name() << "' is " << p.get_age() << " years old." << std::endl;
+         
     return 0;
 }
 
