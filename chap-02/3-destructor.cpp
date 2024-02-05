@@ -14,6 +14,12 @@ public:
 
     void wait(unsigned int years) { _age += years; }
 
+    ~Person() {
+        std::cout << get_full_name() << " died at " 
+                  << get_age() << " years old"
+                  << std::endl;
+    }
+
 private:
     std::string  _name;
     std::string  _surname;
@@ -25,8 +31,22 @@ int main()
     {
         Person batman { "Bruce", "Wayne" };
         batman.wait(23);
-    }
+    }   // dtor est appelle ici
 
     std::cout << "After block" << std::endl;
+
+    Person batman { "Bruce", "Wayne" };
+    batman.wait(23);
+
+    std::cout << "End of block main" << std::endl;
+
     return 0;
-}
+}   // dtor est appelle ici
+
+/*
+Bruce Wayne died at 23 years old
+After block
+End of block main
+Bruce Wayne died at 23 years old
+
+*/
