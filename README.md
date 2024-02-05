@@ -41,6 +41,7 @@ Commandes Git
 - git log                // infos et HEAD
 
 ## travail dans une branche
+
 - git branch test         // creation de la branche en local
 - git checkout test      // changement de branche
 - git add fichier.cpp
@@ -69,11 +70,9 @@ Commandes Git
 - git push origin -D test  // suppression de la branche test distante sans verification
 
 ## Pour effacer un fichier sur le depot distant
-
 1. Supprimer le fichier localement
-
-`git rm fichier.cpp`
    
+    `git rm fichier.cpp`
 2. Pousser les modifications vers le depot distant
 
-`git push origin master`
+    `git push origin master`
