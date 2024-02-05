@@ -38,21 +38,42 @@ Commandes Git
 -------------
 
 - git status
-- git add fichier.cpp
-- git commit -m "first commit"
-- git pull origin master (pour mettre a jour le depot distant sur le local)
-- git push origin master (pour mettre a jour le depot local sur le distant)
+- git log                // infos et HEAD
+
+## travail dans une branche
 - git branch test         // creation de la branche en local
 - git checkout test      // changement de branche
-- git log                // infos et HEAD
+- git add fichier.cpp
+- git commit -m "first commit"
+- git push origin test 
+
+## push / pull
+
+- git pull origin master (pour mettre a jour le depot distant sur le local)
+- git push origin master (pour mettre a jour le depot local sur le distant)
 - git push origin test   // pour pousser la branche test
+- git pull origin test   // pour recupurer la branch test
+
+## Merge de la branche de test sur master
+
 - git checkout master    // on revient sur master
 - git merge test         // on merge la branche test
-- git vommit -m "merge de la branche de test"
+- git commit -m "merge de la branche de test"
 - git push origin master
+
+## Suppression d'une branche
+
 - git branch -d test    // suppression de la branche test en local si les merges sont ok
 - git branch -D test    // suppression de la branche test en local sans verification
 - git push origin -d test  // suppression de la branche test distante si les merges sont ok
 - git push origin -D test  // suppression de la branche test distante sans verification
 
+## Pour effacer un fichier sur le depot distant
 
+1. Supprimer le fichier localement
+
+`git rm fichier.cpp`
+   
+2. Pousser les modifications vers le depot distant
+
+`git push origin master`
