@@ -26,27 +26,33 @@ private:
     unsigned int _age = 0u;
 };
 
+
+class Batmobile {
+private:
+    Person _batman {"Bruce", "Wayne"};
+public:
+    ~Batmobile() {
+        std::cout << "The Batmobile has been destroyed" << std::endl;
+    }
+
+};
+
+
 int main()
 {
     {
-        Person batman { "Bruce", "Wayne" };
-        batman.wait(23);
-    }   // dtor est appelle ici
+       Batmobile batmobile;
+    }
 
     std::cout << "After block" << std::endl;
 
-    Person batman { "Bruce", "Wayne" };
-    batman.wait(23);
-
-    std::cout << "End of block main" << std::endl;
 
     return 0;
-}   // dtor est appelle ici
+}   
 
 /*
-Bruce Wayne died at 23 years old
+The Batmobile has been destroyed
+Bruce Wayne died at 0 years old
 After block
-End of block main
-Bruce Wayne died at 23 years old
 
 */
