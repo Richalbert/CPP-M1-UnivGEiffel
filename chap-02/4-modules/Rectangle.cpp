@@ -17,10 +17,14 @@ Rectangle::Rectangle(float length, float width)
     , _width { width }
     {}
 
+// Rectangle::Rectangle(float cote)
+//     : _length { cote }
+//     , _width { cote }
+//     {}
+
 Rectangle::Rectangle(float cote)
-    : _length { cote }
-    , _width { cote }
-    {}
+: Rectangle(cote, cote)
+{}
 
 void Rectangle::scale(float ratio)
     {
