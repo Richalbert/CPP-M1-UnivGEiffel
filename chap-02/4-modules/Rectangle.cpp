@@ -13,10 +13,14 @@
 #include "Rectangle.h"
 
 Rectangle::Rectangle(float length, float width)
-        : _length { length }
-        , _width { width }
+    : _length { length }
+    , _width { width }
     {}
 
+Rectangle::Rectangle(float cote)
+    : _length { cote }
+    , _width { cote }
+    {}
 
 void Rectangle::scale(float ratio)
     {
