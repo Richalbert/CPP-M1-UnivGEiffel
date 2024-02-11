@@ -8,7 +8,8 @@
 class Rectangle
 {
 public:
-    
+    Rectangle();                // ctor par defaut
+    Rectangle(float cote);      // carre
     Rectangle(float length, float width);
     // Rectangle(float length, float width)
     //     : _length { length }
@@ -26,6 +27,12 @@ public:
     //     _length *= ratio;
     //     _width *= ratio;
     // }
+
+    /*
+    *   Attribut statique: 
+    *       sa valeur est portee par la classe et non par une instance
+    */
+    inline static float _default_size;
 
 private:
     float _length;
